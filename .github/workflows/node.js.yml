@@ -33,7 +33,7 @@ jobs:
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: chengkun0804/github-actions-demo
+        image: chengkun0804/nana-js-docker-demo-app
         registry: docker.io
         username: chengkun0804
         password: ${{ secrets.DOCKER_PASSWORD }}
