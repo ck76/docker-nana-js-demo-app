@@ -26,7 +26,7 @@ let mongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true }
 app.post('/update-profile', function (req, res) {
   let userObj = req.body;
   console.log("update-profile mongoUrlDocker  "+mongoUrlDocker);
-  MongoClient.connect(mongoUrlLocal, mongoClientOptions, function (err, client) {
+  MongoClient.connect(mongoUrlDocker, mongoClientOptions, function (err, client) {
     if (err) throw err;
 
     let db = client.db('user-account');
@@ -49,7 +49,7 @@ app.get('/get-profile', function (req, res) {
   let response = {};
   // Connect to the db
   console.log("get-profile mongoUrlDocker  "+mongoUrlDocker);
-  MongoClient.connect(mongoUrlLocal, mongoClientOptions, function (err, client) {
+  MongoClient.connect(mongoUrlDocker, mongoClientOptions, function (err, client) {
     if (err) throw err;
 
     let db = client.db('user-account');
